@@ -7,7 +7,7 @@ public class ObstacleHandler {
 
     private ArrayList<Obstacles> obstacleList = new ArrayList<>();
 
-    private float dx = -3;
+    private float dx = -3f;
     private float ddx = -0.001f;
 
     private long lastOb;

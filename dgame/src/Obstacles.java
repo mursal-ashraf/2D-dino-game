@@ -6,7 +6,7 @@ public class Obstacles extends GameObject{
     private ArrayList<String> obstaclePaths = new ArrayList<>();
 
     public Obstacles(){
-        super(Game.GAME_WIDTH, Game.GAME_HEIGHT);
+        super(Game.GAME_WIDTH, Game.GROUND_HEIGHT);
 
         obstaclePaths.add("assets/assets/cactus1.png");
         obstaclePaths.add("assets/assets/cactus2.png");
