@@ -38,5 +38,10 @@ public abstract class GameObject {
         return null;
     }
 
+    public Rectangle getHitBox() {
+        Rectangle hitBox = new Rectangle(sprite.getWidth(), sprite.getHeight());
+        hitBox.setLocation((int) x, (int) y - sprite.getHeight());
+        return hitBox;
+    }
 
 }

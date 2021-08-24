@@ -64,6 +64,7 @@ public class Game extends Canvas implements KeyListener {
     public void tick(){
         player.tick();
         obstacleHandler.tick();
+        detectCollision();
     }
 
     public void render(){
@@ -90,6 +91,15 @@ public class Game extends Canvas implements KeyListener {
         g.dispose();
         bs.show();
 
+    }
+
+    private void detectCollision() {
+        for (Obstacles obstacles: obstacleHandler.getObstacleList()){
+            if (player.getHitBox().intersects(obstacles.getHitBox())) {
+                running = false;
+                return;
+            }
+        }
     }
 
     @Override
