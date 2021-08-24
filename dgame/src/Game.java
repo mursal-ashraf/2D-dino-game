@@ -1,8 +1,9 @@
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
 
-public class Game extends Canvas{
+public class Game extends Canvas implements KeyListener {
 
     public static final int GAME_WIDTH = 800;
     public static final int GAME_HEIGHT = 400;
@@ -14,6 +15,9 @@ public class Game extends Canvas{
     public Game (){
         // initially empty constructor
         player = new Player();
+
+        // key listener
+        addKeyListener(this);
     }
 
     public static void main(String[] args) {
@@ -83,6 +87,10 @@ public class Game extends Canvas{
 
     }
 
+    @Override
+    public void keyTyped(KeyEvent e) {}
+
+    @Override
     public void keyPressed(KeyEvent e){
         int key = e.getKeyCode();
 
@@ -92,5 +100,6 @@ public class Game extends Canvas{
         }
     }
 
-
+    @Override
+    public void keyReleased(KeyEvent e){}
 }
