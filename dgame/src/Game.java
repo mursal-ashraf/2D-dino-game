@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.image.BufferStrategy;
 
 public class Game extends Canvas{
 
@@ -55,6 +56,24 @@ public class Game extends Canvas{
     }
 
     public void render(){
+        BufferStrategy bs = this.getBufferStrategy();
+
+        if (bs == null){
+            // want 3 buffers in this case
+            this.createBufferStrategy(3);
+            return;
+        }
+
+        Graphics g = bs.getDrawGraphics();
+
+        // draw elements here
+        g.setColor(Color.WHITE);
+        g.fillRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
+        g.setColor(Color.BLACK);
+        g.drawLine(0, GROUND_HEIGHT, GAME_WIDTH, GROUND_HEIGHT);
+
+        g.dispose();
+        bs.show();
 
     }
 
