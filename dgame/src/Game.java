@@ -8,9 +8,11 @@ public class Game extends Canvas{
     public static final int GROUND_HEIGHT = 250;
 
     private boolean running = false;
+    private Player player;
 
     public Game (){
         // initially empty constructor
+        player = new Player();
     }
 
     public static void main(String[] args) {
@@ -52,7 +54,7 @@ public class Game extends Canvas{
     }
 
     public void tick(){
-
+        player.tick();
     }
 
     public void render(){
@@ -71,6 +73,9 @@ public class Game extends Canvas{
         g.fillRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
         g.setColor(Color.BLACK);
         g.drawLine(0, GROUND_HEIGHT, GAME_WIDTH, GROUND_HEIGHT);
+
+        // player
+        player.render(g, this);
 
         g.dispose();
         bs.show();
