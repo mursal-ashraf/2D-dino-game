@@ -11,10 +11,13 @@ public class Game extends Canvas implements KeyListener {
 
     private boolean running = false;
     private Player player;
+    private ObstacleHandler obstacleHandler;
 
     public Game (){
-        // initially empty constructor
+        // initialise new objects
         player = new Player();
+
+        obstacleHandler = new ObstacleHandler();
 
         // key listener
         addKeyListener(this);
@@ -60,6 +63,7 @@ public class Game extends Canvas implements KeyListener {
 
     public void tick(){
         player.tick();
+        obstacleHandler.tick();
     }
 
     public void render(){
@@ -81,6 +85,7 @@ public class Game extends Canvas implements KeyListener {
 
         // player
         player.render(g, this);
+        obstacleHandler.render(g, this);
 
         g.dispose();
         bs.show();
