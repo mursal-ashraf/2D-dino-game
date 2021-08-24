@@ -13,7 +13,7 @@ public class Game extends Canvas{
     }
 
     public static void main(String[] args) {
-
+        new GameWindow(GAME_WIDTH, GAME_HEIGHT, "Dino Game", new Game());
     }
 
     public void start(){

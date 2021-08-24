@@ -15,6 +15,7 @@ public class GameWindow {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
+        // calls start method
         newGame.start();
     }
 }
