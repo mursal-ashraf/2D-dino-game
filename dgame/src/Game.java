@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
 
 public class Game extends Canvas{
@@ -80,6 +81,15 @@ public class Game extends Canvas{
         g.dispose();
         bs.show();
 
+    }
+
+    public void keyPressed(KeyEvent e){
+        int key = e.getKeyCode();
+
+        if (key == KeyEvent.VK_SPACE){
+            // have to implement jump action
+            player.jumpAction();
+        }
     }
 
 
