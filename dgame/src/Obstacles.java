@@ -13,6 +13,6 @@ public class Obstacles extends GameObject{
         obstaclePaths.add("assets/assets/cactus3.png");
 
         sprite = loadSprite(obstaclePaths.get(new Random().nextInt(obstaclePaths.size())));
-        
+
     }
 }
