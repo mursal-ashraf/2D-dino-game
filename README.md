@@ -3,6 +3,7 @@
 
 ## About
 Basic dinosaur game, like the one that shows up in chrome during an error.
+**Note**: all source code is in ./dgame/src/
 
 ## Why?
 
